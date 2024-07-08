@@ -6,10 +6,21 @@ backend:
 media_folder: "static/img/uploads"
 public_folder: "/img/uploads"
 
-- name: placeholder
-    label: Placeholder
-    folder: placeholder
-    create: false
-    slug: "{{slug}}"
+collections:
+  - name: blog
+    label: Blog
+    folder: blog
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list" }
+      - label: "Authors"
+        name: "authors"
+        widget: "list"
+        fields:
+          - { name: "name", label: "Name", widget: "string" }
+          - { name: "title", label: "Title", widget: "string" }
+          - { name: "url", label: "URL", widget: "string" }
+          - { name: "imageUrl", label: "Image URL", widget: "string" }

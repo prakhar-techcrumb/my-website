@@ -8,39 +8,8 @@
 <body>
   <!-- Include the script that builds the page and powers Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-
   <script>
-    async function loadCMSConfig() {
-      try {
-        // Fetch the base YAML config
-        const baseConfigResponse = await fetch('/config.yml'); // Adjust the path as needed
-        const baseConfigText = await baseConfigResponse.text();
-        
-        // Fetch the dynamic collections config
-        const collectionsConfigResponse = await fetch('/collections-config.json'); // Adjust the path as needed
-        const collectionsConfig = await collectionsConfigResponse.json();
-
-        // Parse the YAML base config
-        const baseConfig = jsyaml.load(baseConfigText);
-
-        // Remove the placeholder collection if it exists
-        baseConfig.collections = baseConfig.collections.filter(collection => collection.name !== 'placeholder');
-
-        // Add dynamic collections
-        baseConfig.collections.push(...collectionsConfig.collections);
-
-        // Initialize Decap CMS with the updated configuration
-        DecapCMS.init({ config: baseConfig });
-      } catch (error) {
-        console.error('Error loading CMS config:', error);
-      }
-    }
-
-    // Load CMS configuration when the document is ready
-    document.addEventListener('DOMContentLoaded', loadCMSConfig);
+    DecapCMS.init({ config: '/admin/config.yml' });
   </script>
-
-  <!-- Include the YAML parsing library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
 </body>
 </html>
