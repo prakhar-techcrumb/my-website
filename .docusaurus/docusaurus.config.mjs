@@ -21,6 +21,10 @@ export default {
     "path": "i18n",
     "localeConfigs": {}
   },
+  "staticDirectories": [
+    "static",
+    "admin"
+  ],
   "presets": [
     [
       "classic",
@@ -343,9 +347,6 @@ export default {
   },
   "onBrokenAnchors": "warn",
   "onDuplicateRoutes": "warn",
-  "staticDirectories": [
-    "static"
-  ],
   "customFields": {},
   "plugins": [],
   "themes": [],
