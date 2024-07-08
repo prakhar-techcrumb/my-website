@@ -12,21 +12,24 @@
   <script>
     async function loadCMSConfig() {
       try {
-        // Fetch the base config
-        const baseConfigResponse = await fetch('/path/to/config.yml'); // Adjust path as needed
+        // Fetch the base YAML config
+        const baseConfigResponse = await fetch('/config.yml'); // Adjust the path as needed
         const baseConfigText = await baseConfigResponse.text();
         
         // Fetch the dynamic collections config
-        const collectionsConfigResponse = await fetch('/path/to/collections-config.json'); // Adjust path as needed
+        const collectionsConfigResponse = await fetch('/collections-config.json'); // Adjust the path as needed
         const collectionsConfig = await collectionsConfigResponse.json();
-        
+
         // Parse the YAML base config
         const baseConfig = jsyaml.load(baseConfigText);
-        
-        // Merge the collections from JSON into the base config
-        baseConfig.collections = collectionsConfig.collections;
 
-        // Initialize Decap CMS with the merged configuration
+        // Remove the placeholder collection if it exists
+        baseConfig.collections = baseConfig.collections.filter(collection => collection.name !== 'placeholder');
+
+        // Add dynamic collections
+        baseConfig.collections.push(...collectionsConfig.collections);
+
+        // Initialize Decap CMS with the updated configuration
         DecapCMS.init({ config: baseConfig });
       } catch (error) {
         console.error('Error loading CMS config:', error);
