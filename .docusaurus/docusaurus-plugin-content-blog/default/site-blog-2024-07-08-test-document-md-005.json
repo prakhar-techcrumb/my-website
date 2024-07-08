@@ -1,0 +1,24 @@
+{
+  "permalink": "/blog/2024/07/08/test-document",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2024-07-08-test-document.md",
+  "source": "@site/blog/2024-07-08-test-document.md",
+  "title": "Test Document",
+  "description": "This is a test document",
+  "date": "2024-07-08T00:00:00.000Z",
+  "tags": [],
+  "readingTime": 0.025,
+  "hasTruncateMarker": false,
+  "authors": [],
+  "frontMatter": {
+    "title": "Test Document"
+  },
+  "unlisted": false,
+  "prevItem": {
+    "title": "test 123",
+    "permalink": "/blog/2024/07/08/test-123"
+  },
+  "nextItem": {
+    "title": "First Blog Post",
+    "permalink": "/blog/first-blog-post"
+  }
+}

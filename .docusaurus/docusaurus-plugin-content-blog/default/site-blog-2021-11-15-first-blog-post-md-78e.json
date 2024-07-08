@@ -45,5 +45,9 @@
       }
     ]
   },
-  "unlisted": false
+  "unlisted": false,
+  "prevItem": {
+    "title": "Test Document",
+    "permalink": "/blog/2024/07/08/test-document"
+  }
 }
