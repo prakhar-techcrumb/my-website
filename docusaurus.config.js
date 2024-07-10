@@ -4,7 +4,7 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import {themes as prismThemes} from 'prism-react-renderer';
+import { themes as prismThemes } from "prism-react-renderer";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -82,6 +82,10 @@ const config = {
                         label: "GitHub",
                         position: "right",
                     },
+                    {
+                        type: "search",
+                        position: "right",
+                    },
                 ],
             },
             footer: {
@@ -134,6 +138,14 @@ const config = {
                 darkTheme: prismThemes.dracula,
             },
         }),
+    themes: [
+        [
+            require.resolve("docusaurus-lunr-search"),
+            {
+                languages: ["en"], // Specify the languages, by default it's ['en']
+            },
+        ],
+    ],
 };
 
 export default config;

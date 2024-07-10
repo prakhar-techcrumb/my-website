@@ -66,6 +66,10 @@ export default {
           "href": "https://github.com/facebook/docusaurus",
           "label": "GitHub",
           "position": "right"
+        },
+        {
+          "type": "search",
+          "position": "right"
         }
       ],
       "hideOnScroll": false
@@ -337,6 +341,16 @@ export default {
       "maxHeadingLevel": 3
     }
   },
+  "themes": [
+    [
+      "C:\\Users\\PRAKHAR GUPTA\\Desktop\\Documentation Demo\\node_modules\\docusaurus-lunr-search\\src\\index.js",
+      {
+        "languages": [
+          "en"
+        ]
+      }
+    ]
+  ],
   "baseUrlIssueBanner": true,
   "future": {
     "experimental_storage": {
@@ -349,7 +363,6 @@ export default {
   "onDuplicateRoutes": "warn",
   "customFields": {},
   "plugins": [],
-  "themes": [],
   "scripts": [],
   "headTags": [],
   "stylesheets": [],
